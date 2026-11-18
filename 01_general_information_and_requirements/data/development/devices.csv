@@ -1,0 +1,9 @@
+device_id,description
+DEV-001,"A mobile app that lets users log their daily step count and displays a running weekly total. No health claims are made and no data is used for diagnosis or treatment."
+DEV-002,"A smartphone application that calculates a patient-specific insulin dose recommendation based on entered blood glucose readings and carbohydrate intake, intended for use by diabetic patients to guide dosing decisions."
+DEV-003,"Software that analyzes retinal fundus images and provides a diagnostic output indicating the presence or absence of diabetic retinopathy, intended to inform treatment decisions by an ophthalmologist."
+DEV-004,"A hospital scheduling system that manages operating room bookings and staff rosters, with no diagnostic, therapeutic, or monitoring function related to individual patients."
+DEV-005,"Software intended to control the delivery of a closed-loop insulin pump by continuously adjusting infusion rates based on real-time continuous glucose monitor readings, directly determining therapy without clinician review."
+DEV-006,"A wellness app."
+DEV-007,"Software that aggregates a patient's electronic health records from multiple hospital systems into a single read-only viewer for clinicians, without performing any analysis, interpretation, or decision support."
+DEV-008,"An algorithm that monitors continuous ECG telemetry from hospitalized cardiac patients and generates real-time alerts for clinically significant arrhythmias requiring immediate intervention."

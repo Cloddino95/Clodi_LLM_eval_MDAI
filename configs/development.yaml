@@ -1,0 +1,49 @@
+phase: development
+
+study:
+  name: mdr_samd_prompt_and_pipeline_development
+  run_label: development
+
+dataset:
+  path: ../01_general_information_and_requirements/data/development/devices.csv
+  phase: development
+  name: example_development_devices_v1
+  development_paths: []
+
+reference_labels:
+  path: ../01_general_information_and_requirements/data/development/reference_labels.csv
+
+models:
+  - repository: meta-llama/Llama-3.1-8B-Instruct
+    revision: 0e9e39f249a16976918f6564b8830bc894c89659
+    quantization: null
+    max_model_len: 8192
+    gpu_memory_utilization: 0.9
+  - repository: Qwen/Qwen2.5-7B-Instruct
+    revision: a09a35458c702b33eeacc393d103063234e8bc28
+    quantization: null
+    max_model_len: 8192
+    gpu_memory_utilization: 0.9
+  - repository: mistralai/Mistral-7B-Instruct-v0.3
+    revision: c170c708c41dac9275d15a8fff4eca08d52bab71
+    quantization: null
+    max_model_len: 8192
+    gpu_memory_utilization: 0.9
+
+generation:
+  repeats: 5
+  temperature: 0.0
+  seeds: [2001, 2002, 2003, 2004, 2005]
+  max_tokens: 1024
+
+outputs:
+  root: ../runs
+
+analysis:
+  enabled: true
+  specification: ../analysis_specifications/primary_analysis_v1.yaml
+
+failure_policy:
+  continue_on_model_failure: true
+
+final_freeze: {}

@@ -1,0 +1,39 @@
+phase: smoke_test
+
+study:
+  name: mdr_samd_pipeline_smoke_test
+  run_label: smoke
+
+dataset:
+  path: ../01_general_information_and_requirements/data/smoke_test/devices.csv
+  phase: smoke_test
+  name: synthetic_smoke_devices_v1
+  development_paths: []
+
+reference_labels:
+  path: ../01_general_information_and_requirements/data/smoke_test/reference_labels.csv
+
+models:
+  - repository: mock://deterministic
+    revision: mock-v1
+    quantization: null
+    max_model_len: 2048
+    gpu_memory_utilization: 0.9
+
+generation:
+  repeats: 2
+  temperature: 0.0
+  seeds: [1001, 1002]
+  max_tokens: 256
+
+outputs:
+  root: ../runs
+
+analysis:
+  enabled: true
+  specification: ../analysis_specifications/primary_analysis_v1.yaml
+
+failure_policy:
+  continue_on_model_failure: false
+
+final_freeze: {}

@@ -1,0 +1,64 @@
+# This tracked template is intentionally not executable. After all study code
+# and settings are reviewed and committed, copy it to the Git-ignored
+# configs/final_frozen.local.yaml and populate that copy with the audited
+# final_freeze values. See Descriptive_Docs/FINAL_RUN_CHECKLIST.md.
+phase: final
+
+study:
+  name: mdr_samd_confirmatory_evaluation
+  run_label: final
+
+dataset:
+  path: ../01_general_information_and_requirements/data/final/devices.csv
+  phase: final
+  name: sealed_final_devices_v1
+  development_paths:
+    - ../01_general_information_and_requirements/data/development/devices.csv
+
+reference_labels:
+  path: ../01_general_information_and_requirements/data/final/reference_labels.csv
+
+models:
+  - repository: meta-llama/Llama-3.1-8B-Instruct
+    revision: 0e9e39f249a16976918f6564b8830bc894c89659
+    quantization: null
+    max_model_len: 8192
+    gpu_memory_utilization: 0.9
+  - repository: Qwen/Qwen2.5-7B-Instruct
+    revision: a09a35458c702b33eeacc393d103063234e8bc28
+    quantization: null
+    max_model_len: 8192
+    gpu_memory_utilization: 0.9
+  - repository: mistralai/Mistral-7B-Instruct-v0.3
+    revision: c170c708c41dac9275d15a8fff4eca08d52bab71
+    quantization: null
+    max_model_len: 8192
+    gpu_memory_utilization: 0.9
+
+generation:
+  repeats: 5
+  temperature: 0.0
+  seeds: [3001, 3002, 3003, 3004, 3005]
+  max_tokens: 1024
+
+outputs:
+  root: ../runs
+
+analysis:
+  enabled: true
+  specification: ../analysis_specifications/primary_analysis_v1.yaml
+
+failure_policy:
+  continue_on_model_failure: false
+
+# In final_frozen.local.yaml, replace every null with the audited value before
+# any final-mode run. Leave this tracked template fail-closed.
+final_freeze:
+  prompt_sha256: null
+  dataset_sha256: null
+  reference_labels_sha256: null
+  analysis_specification_sha256: null
+  output_parser_sha256: null
+  models_sha256: null
+  generation_sha256: null
+  code_git_commit: null

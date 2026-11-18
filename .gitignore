@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+runs/
+prompt_diagnostics_results.csv
+.pytest_cache/
+.MDR_LLM_Eval_Session_Summary_xml/
+
+# The confirmatory data and populated freeze configuration are reviewed and
+# archived separately; do not publish them to GitHub by accident.
+01_general_information_and_requirements/data/final/devices.csv
+01_general_information_and_requirements/data/final/reference_labels.csv
+configs/final_frozen.local.yaml

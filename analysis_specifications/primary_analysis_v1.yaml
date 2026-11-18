@@ -1,0 +1,24 @@
+version: primary_analysis_v1
+description: >-
+  Prespecified descriptive analysis for MDR SaMD classification runs. This
+  specification does not define inferential hypothesis tests.
+
+accuracy:
+  primary_denominator: all_generations
+  secondary_denominator: schema_valid_generations
+
+consistency:
+  denominator: schema_valid_generations
+  statistic: modal_share
+
+metrics:
+  - parse_rate
+  - schema_valid_rate
+  - accuracy_all_generations
+  - accuracy_valid_outputs
+  - citation_present_rate
+  - no_external_resources_statement_rate
+  - citation_contradiction_rate
+  - response_truncation_rate
+  - json_repair_rate
+  - extraneous_text_rate

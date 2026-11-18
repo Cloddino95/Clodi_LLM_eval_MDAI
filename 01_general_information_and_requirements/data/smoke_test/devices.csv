@@ -1,0 +1,4 @@
+device_id,description
+SMOKE-001,"A mobile app that records daily step counts and makes no medical claims."
+SMOKE-002,"Software that recommends a patient-specific insulin dose from glucose and carbohydrate inputs."
+

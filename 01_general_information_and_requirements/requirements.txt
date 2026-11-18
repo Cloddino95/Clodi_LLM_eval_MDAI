@@ -1,0 +1,5 @@
+# Install once (from the project root): pip install -r 01_general_information_and_requirements/requirements.txt
+vllm>=0.5.4
+huggingface_hub>=0.24
+pandas>=2.2
+PyYAML>=6.0
